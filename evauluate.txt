@@ -1,0 +1,24 @@
+detailed description: https://arxiv.org/abs/2406.04123
+deepspeech documentation: https://deepspeech.readthedocs.io/en/r0.9/
+
+To install and use DeepSpeech all you have to do is:
+# Create and activate a virtualenv
+virtualenv -p python3 $HOME/tmp/deepspeech-gpu-venv/
+source $HOME/tmp/deepspeech-gpu-venv/bin/activate
+
+# Install DeepSpeech CUDA enabled package
+pip3 install deepspeech-gpu
+
+# Transcribe an audio file.
+deepspeech --model deepspeech-0.9.3-models.pbmm --scorer deepspeech-0.9.3-models.scorer --audio audio/2830-3980-0043.wav
+
+>> source $HOME/tmp/deepspeech-gpu-venv/bin/activate
+=========================================================
+
+pred_30_Task_1_Level_1.csv 0.009272442654941683
+pred_30_Task_1_Level_2.csv 0.007087956593600201
+pred_30_Task_1_Level_3.csv 0.01958308496452265
+pred_30_Task_1_Level_4.csv 0.19529477812269883
+pred_30_Task_1_Level_5.csv 0.3059141474568784
+pred_30_Task_1_Level_6.csv 0.4618230726400286
+pred_30_Task_1_Level_7.csv 0.5534406052530579

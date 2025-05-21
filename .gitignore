@@ -1,0 +1,12 @@
+outputs/
+plot/
+Dataset/
+Tasks/
+Test/
+
+command.txt
+evaluate.txt
+
+deepspeech-0.9.3-models.pbmm
+deepspeech-0.9.3-models.scorer
+
