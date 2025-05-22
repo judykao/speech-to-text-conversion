@@ -17,7 +17,7 @@ This solution improves the solution [arXiv:2501.01650](https://arxiv.org/abs/250
 
 We first compute the log-FFT transform of both clean and polluted data. 
 More precisely, we transform both clean and polluted data using [fast fourier transformc (FFT)](https://numpy.org/doc/stable/reference/routines.fft.html) in `numpy`, and then taking the logarithm of the magnitude of the transformed data. 
-We compute the average difference $\mu$ over all training samples. 
+We compute the average difference ![\mu](https://latex.codecogs.com/png.image?\dpi{110}\mu) over all training samples. 
 For each test sample, we estimate the clean spectrum by adding the average difference to the log-FFT of the recorded signal. 
 The corrected spectrum is then transformed back to the time domain using the inverse FFT. 
 This approach restores high-frequency content and improves clarity in muffled recordings. 
@@ -34,13 +34,13 @@ As mentioned in [arXiv:2501.01650](https://arxiv.org/abs/2501.01650), it is diff
 ![y[n]=x[n]*h[n]](https://latex.codecogs.com/png.image?\dpi{110}y[n]=x[n]*h[n]) 
 </div>
 
-where  ![h(t)=e^{-\lambda t}](https://latex.codecogs.com/png.image?\dpi{110}h(t)=e^{-\lambda%20t}). We estimate the decay factor $\lambda$ using the following relation: 
+where  ![h(t)=e^{-\lambda t}](https://latex.codecogs.com/png.image?\dpi{110}h(t)=e^{-\lambda%20t}). We estimate the decay factor ![\lambda](https://latex.codecogs.com/png.image?\dpi{110}\lambda) using the following relation: 
 <div align="center">
   
 ![\lambda \cdot T \approx 6.9](https://latex.codecogs.com/png.image?\dpi{110}\lambda\cdot%20T\approx%206.9)
 </div>
 
-where $T$ is the reverberation time we sampled from training data.
+where ![T](https://latex.codecogs.com/png.image?\dpi{110}T) is the reverberation time we sampled from training data.
 Then, we perform deconvolution by simple division:
 <div align="center">
   
@@ -65,6 +65,10 @@ TBA
 > [!IMPORTANT] 
 > The programs only handle 16-bit 16kHz audio files, in `.wav` format.
 
-# An illustration of some example results 
+# Results 
+
+We compare our results to the top entries in the Helsinki Speech Challenge 2024. The top-performing teams primarily used deep learning models for speech enhancement. 
+ur method is based entirely on mathematical modeling and signal processing, using the Fourier domain and a simple statistical estimation from training data. Thus, the method itself is lightweight.
+In some cases, [DeepSpeech](https://github.com/mozilla/DeepSpeech) fails to capture the actual improvement, but human listeners report a clear increase in intelligibility after processing.
 
 [comment]: <> (https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
