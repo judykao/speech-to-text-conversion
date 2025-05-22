@@ -142,7 +142,6 @@ for i in range(len(raw_folders)):
     
     noisy_audio_int=fill_zeros(noisy_audio_int, max_len[i])
     indices = np.array(noisy_filename)
-    # print(indices[0])
 
     print(len(noisy_audio_int[0]))
     print(len(noisy_audio_int[29]))
