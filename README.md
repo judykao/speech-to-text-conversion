@@ -54,13 +54,9 @@ Finally, we apply the same high-frequency correction technique used in [Task 1 (
 
 We use the same methods as in [Task 2 (reverberation experiments)](#task-2-reverberation-experiments) above. 
 
-# Installation instructions, including any requirements 
+# Requirements 
 - [ ] add requirement.txt 
 - [ ] which Python version needed in each `.py` file
-
-# Usage instructions 
-
-TBA 
 
 > [!IMPORTANT] 
 > The programs only handle 16-bit 16kHz audio files, in `.wav` format.
