@@ -67,8 +67,19 @@ TBA
 
 # Results 
 
-We compare our results to the top entries in the Helsinki Speech Challenge 2024. The top-performing teams primarily used deep learning models for speech enhancement. 
+We compare our results to the top entries in the Helsinki Speech Challenge 2024. 
+To evaluate the quality of speech restoration, we use a metric in speech regognition called the Character Error Rate (CER). 
+A lower CER indicates better intelligibility and restoration quality. 
+We use a pretrained [DeepSpeech](https://github.com/mozilla/DeepSpeech) model to transcribe both the original and restored audio signals. 
+The transcriptions are then compared to the ground truth text to compute the CER. 
+The top-performing teams primarily used deep learning models for speech enhancement. 
 ur method is based entirely on mathematical modeling and signal processing, using the Fourier domain and a simple statistical estimation from training data. Thus, the method itself is lightweight.
 In some cases, [DeepSpeech](https://github.com/mozilla/DeepSpeech) fails to capture the actual improvement, but human listeners report a clear increase in intelligibility after processing.
+
+<div align="center">
+<img src="our_CER.png" alt="Our results" width="45%" style="margin-right: 10px;" /> <img src="HSC2024results.png" alt="HSC2024results" width="45%" />
+</div>
+
+- [ ] add some audio files here (choose one sample from Task 1, and choose one sample from Task 2 is sufficient)
 
 [comment]: <> (https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
