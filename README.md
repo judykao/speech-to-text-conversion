@@ -63,13 +63,13 @@ We use the same methods as in [Task 2 (reverberation experiments)](#task-2-rever
 
 # Results 
 
-We compare our results to the top entries in the Helsinki Speech Challenge 2024. 
+We compare our results to the top entries in the [Helsinki Speech Challenge 2024](https://blogs.helsinki.fi/helsinki-speech-challenge/). 
 To evaluate the quality of speech restoration, we use a metric in speech regognition called the Character Error Rate (CER). 
 A lower CER indicates better intelligibility and restoration quality. 
 We use a pretrained [DeepSpeech](https://github.com/mozilla/DeepSpeech) model to transcribe both the original and restored audio signals. 
 The transcriptions are then compared to the ground truth text to compute the CER. 
 The top-performing teams primarily used deep learning models for speech enhancement. 
-ur method is based entirely on mathematical modeling and signal processing, using the Fourier domain and a simple statistical estimation from training data. Thus, the method itself is lightweight.
+ur method is based entirely on mathematical modeling and signal processing, using the Fourier domain and a simple statistical estimation from training data. Thus, the method itself is lightweight with extremely low real-time factors (RTF).
 In some cases, [DeepSpeech](https://github.com/mozilla/DeepSpeech) fails to capture the actual improvement, but human listeners report a clear increase in intelligibility after processing.
 
 <div align="center">
