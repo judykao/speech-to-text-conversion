@@ -1,5 +1,4 @@
 outputs/
-plot/
 Dataset/
 Tasks/
 Tests/
@@ -12,3 +11,4 @@ deepspeech-0.9.3-models.scorer
 
 requirement.txt
 
+plot/test_compare.png

@@ -181,19 +181,20 @@ def evaluate(args):
     return df['CER'].mean()
 
 if __name__ == '__main__':
+    data_folders=['Task_1_Level_1','Task_1_Level_2','Task_1_Level_3','Task_1_Level_4','Task_1_Level_5','Task_1_Level_6','Task_1_Level_7']
     # data_folders=['Task_2_Level_1','Task_2_Level_2','Task_2_Level_3']
-    data_folders=['Task_3_Level_1','Task_3_Level_2']
+    # data_folders=['Task_3_Level_1','Task_3_Level_2']
 
     for i, data_folder in enumerate(data_folders):
         class Arg:
             def __init__(self, data_folder):
-                self.audio_dir = f"Dataset/{data_folder.replace('Task', 'Test')}/enhanced_rm_echo_audio"
+                self.audio_dir = f"Dataset/{data_folder.replace('Task', 'Test')}/test_audio"
                 # self.audio_dir = f"Test/{data_folder}/Recorded"
                 # self.text_file = f'Tasks/{data_folder}/{data_folder}_text_samples.txt'
-                self.text_file = f'Test/{data_folder}/test_level_{9+i}.txt'
+                self.text_file = f'Tests/{data_folder}/test_level_{1+i}.txt'
                 # self.output_csv = f'outputs/enhanced_rm_echo_{data_folder}.csv'
-                self.output_csv = f'outputs/enhanced_rm_echo_{data_folder}.csv'
-                self.output_txt = 'outputs/evaluate_Task3.txt'
+                self.output_csv = f'outputs/test_{data_folder}.csv'
+                self.output_txt = 'outputs/evaluate_Task1.txt'
                 self.model_path = 'deepspeech-0.9.3-models.pbmm'
                 self.scorer_path = 'deepspeech-0.9.3-models.scorer'
                 self.verbose = 1

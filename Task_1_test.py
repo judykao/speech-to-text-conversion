@@ -2,6 +2,7 @@
 import os
 import numpy as np
 from scipy.io.wavfile import write
+from scipy.ndimage import gaussian_filter1d
 
 data_folders=['Task_1_Level_1', 'Task_1_Level_2', 'Task_1_Level_3', 'Task_1_Level_4', 'Task_1_Level_5', 'Task_1_Level_6', 'Task_1_Level_7']
 
@@ -24,9 +25,8 @@ for i, data_folder in enumerate(data_folders):
 
     #%%
     log_fft_magnitude_diff = log_output_fft_magnitude - log_input_fft_magnitude
-    # print(log_fft_magnitude_diff.shape)
-    column_means = np.mean(log_fft_magnitude_diff[:30], axis=0)
-    # column_means = np.mean(log_fft_magnitude_diff, axis=0)
+    column_means = np.mean(log_fft_magnitude_diff, axis=0)
+    smoothed_column_means = gaussian_filter1d(column_means, sigma=2400)
     print(column_means.shape)
 
     #==================test_data==================
@@ -40,7 +40,7 @@ for i, data_folder in enumerate(data_folders):
     input_fft_magnitude = np.abs(input_fft)
     log_input_fft_magnitude = np.log10(input_fft_magnitude+1)
 
-    adjusted_log_input_fft = log_input_fft_magnitude + column_means
+    adjusted_log_input_fft = log_input_fft_magnitude + smoothed_column_means
 
     adjusted_input_fft_magnitude = 10 ** adjusted_log_input_fft - 1
     input_fft_phase = np.angle(input_fft)
@@ -49,7 +49,7 @@ for i, data_folder in enumerate(data_folders):
     pred_data = np.fft.ifft(adjusted_input_fft, axis=1).real
     pred_data /= np.max(np.abs(pred_data), axis=1, keepdims=True)
 
-    wav_folder = r'/working/CNN/Dataset/%s/test_audio'%data_folder
+    wav_folder = r'/working/CNN/Dataset/%s/test_audio_smoothed'%data_folder
     os.makedirs(wav_folder, exist_ok=True)
 
     sample_rate = 16000

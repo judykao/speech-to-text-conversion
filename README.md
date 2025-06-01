@@ -23,7 +23,7 @@ The corrected spectrum is then transformed back to the time domain using the inv
 This approach restores high-frequency content and improves clarity in muffled recordings. 
 
 <div align="center">
-<img src="original.png" alt="Original spectrum" width="45%" style="margin-right: 10px;" /> <img src="adjusted.png" alt="Adjusted spectrum" width="45%" />
+<img src="plot/original-fft.png" alt="Original spectrum" width="45%" style="margin-right: 10px;" /> <img src="plot/adjusted-fft.png" alt="Adjusted spectrum" width="45%" />
 </div>
 
 ## Task 2 (reverberation experiments) 
@@ -73,7 +73,7 @@ ur method is based entirely on mathematical modeling and signal processing, usin
 In some cases, [DeepSpeech](https://github.com/mozilla/DeepSpeech) fails to capture the actual improvement, but human listeners report a clear increase in intelligibility after processing.
 
 <div align="center">
-<img src="our_CER.png" alt="Our results" width="45%" style="margin-right: 10px;" /> <img src="HSC2024results.png" alt="HSC2024results" width="45%" />
+<img src="plot/our_CER.png" alt="Our results" width="45%" style="margin-right: 10px;" /> <img src="plot/HSC2024results.png" alt="HSC2024results" width="45%" />
 </div>
 
 - [ ] add some audio files here (choose one sample from Task 1, and choose one sample from Task 2 is sufficient)
