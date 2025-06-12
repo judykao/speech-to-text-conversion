@@ -103,7 +103,7 @@ for data_folder in task_relation:
 
     log_fft_magnitude_diff = log_output_fft_magnitude - log_input_fft_magnitude
     column_means = np.mean(log_fft_magnitude_diff, axis=0)
-    smoothed_column_means = gaussian_filter1d(column_means, sigma=4000)
+    # smoothed_column_means = gaussian_filter1d(column_means, sigma=4000)
     
     print(f'column_means gets in {enhanced_data_folder}.')
 
@@ -116,7 +116,7 @@ for data_folder in task_relation:
     input_fft_magnitude = np.abs(input_fft)
     log_input_fft_magnitude = np.log10(input_fft_magnitude+1)
 
-    adjusted_log_input_fft = log_input_fft_magnitude + smoothed_column_means
+    adjusted_log_input_fft = log_input_fft_magnitude + column_means
 
     adjusted_input_fft_magnitude = 10 ** adjusted_log_input_fft - 1
     input_fft_phase = np.angle(input_fft)

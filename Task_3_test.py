@@ -56,6 +56,7 @@ for data_folder in task_relation:
     filtered_duration = duration[(duration >= lower_bound) & (duration <= upper_bound)]
     
     T = np.mean(filtered_duration)/16000
+    print(f'T: {T} sec')
     lam_in_time = 6.9/T
     lam = lam_in_time/16000
     print(f'lambda: {lam}')
@@ -104,7 +105,7 @@ for data_folder in task_relation:
 
     log_fft_magnitude_diff = log_output_fft_magnitude - log_input_fft_magnitude
     column_means = np.mean(log_fft_magnitude_diff, axis=0)
-    smoothed_column_means = gaussian_filter1d(column_means, sigma=4000)
+    # smoothed_column_means = gaussian_filter1d(column_means, sigma=4000)
     
     print(f'column_means gets in {enhanced_data_folder}.')
 
@@ -117,18 +118,18 @@ for data_folder in task_relation:
     input_fft_magnitude = np.abs(input_fft)
     log_input_fft_magnitude = np.log10(input_fft_magnitude+1)
 
-    adjusted_log_input_fft = log_input_fft_magnitude + smoothed_column_means
+    adjusted_log_input_fft = log_input_fft_magnitude + column_means
 
     adjusted_input_fft_magnitude = 10 ** adjusted_log_input_fft - 1
     input_fft_phase = np.angle(input_fft)
     adjusted_input_fft = adjusted_input_fft_magnitude * np.exp(1j * input_fft_phase)
 
     pred_data_2 = np.fft.ifft(adjusted_input_fft, axis=1).real
-    np.save('./Dataset/%s/rm_echo_enhanced.npy'%data_folder, pred_data_2)
+    # np.save('./Dataset/%s/rm_echo_enhanced.npy'%data_folder, pred_data_2)
     
     pred_data_2 /= np.max(np.abs(pred_data_2), axis=1, keepdims=True)
 
-    wav_folder = r'./Dataset/%s/rm_echo_enhanced_audio'%test_data_folder
+    wav_folder = r'./Dataset/%s/test_audio'%test_data_folder
     os.makedirs(wav_folder, exist_ok=True)
 
     sample_rate = 16000

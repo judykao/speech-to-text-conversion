@@ -10,5 +10,4 @@ deepspeech-0.9.3-models.pbmm
 deepspeech-0.9.3-models.scorer
 
 requirement.txt
-
-plot/test_compare.png
+wav_to_mp3.py

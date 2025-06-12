@@ -78,30 +78,13 @@ for data_folder in data_folders:
     X_f = Y_f/W_f
     pred_data = np.fft.ifft(X_f, axis=1).real
 
-    input_fft_magnitude = np.abs(X_f)
-    output_fft_magnitude = np.abs(input_fft)
-    log_input_fft_magnitude = np.log10(input_fft_magnitude+1)
-    log_output_fft_magnitude = np.log10(output_fft_magnitude+1)
-    
-    log_fft_magnitude_diff = log_output_fft_magnitude - log_input_fft_magnitude
-    column_means = np.mean(log_fft_magnitude_diff, axis=0)
-    smoothed_column_means = gaussian_filter1d(column_means, sigma=2400)
-    # print(column_means.shape)
-    adjusted_log_input_fft = log_input_fft_magnitude + smoothed_column_means
-    
-    adjusted_input_fft_magnitude = 10 ** adjusted_log_input_fft - 1
-    input_fft_phase = np.angle(input_fft)
-    adjusted_input_fft = adjusted_input_fft_magnitude * np.exp(1j * input_fft_phase)
-    
-    pred_data_enhanced = np.fft.ifft(adjusted_input_fft, axis=1).real
-
-    np.save('./Dataset/%s/pred_data_smooth.npy'%data_folder, pred_data_enhanced)
-    pred_data_enhanced /= np.max(np.abs(pred_data_enhanced), axis=1, keepdims=True)
+    np.save('./Dataset/%s/pred_data_smooth.npy'%data_folder, pred_data)
+    pred_data /= np.max(np.abs(pred_data), axis=1, keepdims=True)
 
     wav_folder = r'./Dataset/%s/pred_audio_smooth'%data_folder
     os.makedirs(wav_folder, exist_ok=True)
 
-    for i, audio in enumerate(pred_data_enhanced):
+    for i, audio in enumerate(pred_data):
         wav_path = os.path.join(wav_folder, f"{data_folder.lower()}_recorded_{(i+1):03}.wav")
         print(f'Saving audio: {wav_path}')
         write(wav_path, sr, (audio * 32767).astype(np.int16))

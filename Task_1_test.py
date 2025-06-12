@@ -49,7 +49,7 @@ for i, data_folder in enumerate(data_folders):
     pred_data = np.fft.ifft(adjusted_input_fft, axis=1).real
     pred_data /= np.max(np.abs(pred_data), axis=1, keepdims=True)
 
-    wav_folder = r'/working/CNN/Dataset/%s/test_audio_smoothed'%data_folder
+    wav_folder = r'/working/CNN/Dataset/%s/test_audio'%data_folder
     os.makedirs(wav_folder, exist_ok=True)
 
     sample_rate = 16000
