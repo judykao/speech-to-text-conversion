@@ -1,3 +1,6 @@
+> [!NOTE] 
+> For proper equation rendering, please view this documentation in day mode instead of night mode. 
+
 # Author
 
 An-Hsien KAO [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&style=flat-square)](https://www.linkedin.com/in/an-hsien-kao-a63543342) , National Chengchi University, 116 Taipei, Taiwan. 
