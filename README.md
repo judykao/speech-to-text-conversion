@@ -79,13 +79,31 @@ In some cases, [DeepSpeech](https://github.com/mozilla/DeepSpeech) fails to capt
 <img src="plot/our_CER.png" alt="Our results" width="45%" style="margin-right: 10px;" /> <img src="plot/HSC2024results.png" alt="HSC2024results" width="45%" />
 </div>
 
-Here are some demos: 
+## Task 1 
+
+https://github.com/user-attachments/assets/8122e762-92a6-444f-9984-33eaf47ffc25
+
+https://github.com/user-attachments/assets/b410ca4a-debd-4ee3-b8c2-8ac155e65f65
+
+https://github.com/user-attachments/assets/93a58c1d-d18b-4ac4-a7f6-9441d97c195a
+
+## Task 2 
+
+https://github.com/user-attachments/assets/190b3b5b-6ec4-46fb-a464-e843aaaafc69
+
+https://github.com/user-attachments/assets/3e70fe97-7931-4c2a-84dd-fb1fe9150877
+
+https://github.com/user-attachments/assets/7787900c-d074-4329-9d10-41890a437d51
+
+## Task 3 
+
+https://github.com/user-attachments/assets/daefcb18-1972-47d0-9995-b4df0ebf3fcb
+
+https://github.com/user-attachments/assets/cf85b2ab-eb10-4b73-bf0d-3263d965545a
+
+https://github.com/user-attachments/assets/fcd69d10-09e8-4fdb-ab27-33dbe4dba1a4
 
 
-
-
-
-
-
+[comment]: <> (ffmpeg -f lavfi -i color=c=black:s=100x100:d=10 -i input.wav -shortest -c:v libx264 -c:a aac output.mp4)
 
 [comment]: <> (https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
