@@ -51,11 +51,10 @@ Then, we perform deconvolution by simple division:
 </div>
 
 where ![\mathcal{F}](https://latex.codecogs.com/png.image?\dpi{110}\mathcal{F}) is the [fast fourier transformc (FFT)](https://numpy.org/doc/stable/reference/routines.fft.html) in `numpy` mentioned above. 
-Finally, we apply the same high-frequency correction technique used in [Task 1 (filter experiments)](#task-1-filter-experiments) above. 
 
 ## Task 3 (hybrid experiments) 
 
-We use the same methods as in [Task 2 (reverberation experiments)](#task-2-reverberation-experiments) above. 
+We first apply the method in [Task 2 (reverberation experiments)](#task-2-reverberation-experiments) above, and then apply the method in [Task 1 (filter experiments)](#task-1-filter-experiments) above
 
 # Requirements 
 
@@ -67,7 +66,7 @@ As no neural network algorithms are involved, our program has no stringent requi
 # Results 
 
 We compare our results to the top entries in the [Helsinki Speech Challenge 2024](https://blogs.helsinki.fi/helsinki-speech-challenge/). 
-To evaluate the quality of speech restoration, we use a metric in speech regognition called the Character Error Rate (CER). 
+To evaluate the quality of speech restoration, we use a metric in speech recognition called the Character Error Rate (CER). 
 A lower CER indicates better intelligibility and restoration quality. 
 We use a pretrained [DeepSpeech](https://github.com/mozilla/DeepSpeech) model to transcribe both the original and restored audio signals. 
 The transcriptions are then compared to the ground truth text to compute the CER. 
