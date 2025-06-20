@@ -58,8 +58,8 @@ Finally, we apply the same high-frequency correction technique used in [Task 1 (
 We use the same methods as in [Task 2 (reverberation experiments)](#task-2-reverberation-experiments) above. 
 
 # Requirements 
-- [ ] add requirement.txt 
-- [ ] which Python version needed in each `.py` file
+
+As no neural network algorithms are involved, our program has no stringent requirements. A `requirements.txt` file is still provided, just in case. 
 
 > [!IMPORTANT] 
 > The programs only handle 16-bit 16kHz audio files, in `.wav` format.
@@ -79,6 +79,14 @@ In some cases, [DeepSpeech](https://github.com/mozilla/DeepSpeech) fails to capt
 <img src="plot/our_CER.png" alt="Our results" width="45%" style="margin-right: 10px;" /> <img src="plot/HSC2024results.png" alt="HSC2024results" width="45%" />
 </div>
 
-- [ ] add some audio files here (choose one sample from Task 1, and choose one sample from Task 2 is sufficient)
+Here are some demos: 
+
+## Task 1 (sample no. 53) 
+
+[clean audio](Demo/Task1/audio_test_4_053_clean.wav)
+
+[recorded audio](Demo/Task1/audio_test_4_053_recorded.wav)
+
+[adjusted audio](Demo/Task1/audio_test_4_053_adjusted.wav)
 
 [comment]: <> (https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
