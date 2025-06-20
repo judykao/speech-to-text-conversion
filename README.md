@@ -81,12 +81,6 @@ In some cases, [DeepSpeech](https://github.com/mozilla/DeepSpeech) fails to capt
 
 Here are some demos: 
 
-## Task 1 (sample no. 53) 
 
-https://github.com/judykao/speech-to-text-conversion/blob/main/Demo_mp3/Task1/audio_test_4_053_clean.mp3
-
-https://github.com/judykao/speech-to-text-conversion/blob/main/Demo_mp3/Task1/audio_test_4_053_recorded.mp3 
-
-https://github.com/judykao/speech-to-text-conversion/blob/main/Demo_mp3/Task1/audio_test_4_053_adjusted.mp3
 
 [comment]: <> (https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
