@@ -81,7 +81,8 @@ In some cases, [DeepSpeech](https://github.com/mozilla/DeepSpeech) fails to capt
 
 Here are some demos: 
 
-https://github.com/user-attachments/assets/bd04da52-4b3f-496f-bbe9-163bebdabc09
+
+
 
 
 
