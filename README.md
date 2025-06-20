@@ -83,10 +83,10 @@ Here are some demos:
 
 ## Task 1 (sample no. 53) 
 
-[clean audio](Demo/Task1/audio_test_4_053_clean.wav)
+https://github.com/judykao/speech-to-text-conversion/blob/main/Demo_mp3/Task1/audio_test_4_053_clean.mp3
 
-[recorded audio](Demo/Task1/audio_test_4_053_recorded.wav)
+https://github.com/judykao/speech-to-text-conversion/blob/main/Demo_mp3/Task1/audio_test_4_053_recorded.mp3 
 
-[adjusted audio](Demo/Task1/audio_test_4_053_adjusted.wav)
+https://github.com/judykao/speech-to-text-conversion/blob/main/Demo_mp3/Task1/audio_test_4_053_adjusted.mp3
 
 [comment]: <> (https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
