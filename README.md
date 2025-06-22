@@ -1,3 +1,6 @@
+> [!NOTE] 
+> For proper equation rendering, please view this documentation in day mode instead of night mode. 
+
 # Author
 
 An-Hsien KAO [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&style=flat-square)](https://www.linkedin.com/in/an-hsien-kao-a63543342) , National Chengchi University, 116 Taipei, Taiwan. 
@@ -48,15 +51,14 @@ Then, we perform deconvolution by simple division:
 </div>
 
 where ![\mathcal{F}](https://latex.codecogs.com/png.image?\dpi{110}\mathcal{F}) is the [fast fourier transformc (FFT)](https://numpy.org/doc/stable/reference/routines.fft.html) in `numpy` mentioned above. 
-Finally, we apply the same high-frequency correction technique used in [Task 1 (filter experiments)](#task-1-filter-experiments) above. 
 
 ## Task 3 (hybrid experiments) 
 
-We use the same methods as in [Task 2 (reverberation experiments)](#task-2-reverberation-experiments) above. 
+We first apply the method in [Task 2 (reverberation experiments)](#task-2-reverberation-experiments) above, and then apply the method in [Task 1 (filter experiments)](#task-1-filter-experiments) above
 
 # Requirements 
-- [ ] add requirement.txt 
-- [ ] which Python version needed in each `.py` file
+
+As no neural network algorithms are involved, our program has no stringent requirements. A `requirements.txt` file is still provided, just in case. 
 
 > [!IMPORTANT] 
 > The programs only handle 16-bit 16kHz audio files, in `.wav` format.
@@ -64,7 +66,7 @@ We use the same methods as in [Task 2 (reverberation experiments)](#task-2-rever
 # Results 
 
 We compare our results to the top entries in the [Helsinki Speech Challenge 2024](https://blogs.helsinki.fi/helsinki-speech-challenge/). 
-To evaluate the quality of speech restoration, we use a metric in speech regognition called the Character Error Rate (CER). 
+To evaluate the quality of speech restoration, we use a metric in speech recognition called the Character Error Rate (CER). 
 A lower CER indicates better intelligibility and restoration quality. 
 We use a pretrained [DeepSpeech](https://github.com/mozilla/DeepSpeech) model to transcribe both the original and restored audio signals. 
 The transcriptions are then compared to the ground truth text to compute the CER. 
@@ -76,6 +78,31 @@ In some cases, [DeepSpeech](https://github.com/mozilla/DeepSpeech) fails to capt
 <img src="plot/our_CER.png" alt="Our results" width="45%" style="margin-right: 10px;" /> <img src="plot/HSC2024results.png" alt="HSC2024results" width="45%" />
 </div>
 
-- [ ] add some audio files here (choose one sample from Task 1, and choose one sample from Task 2 is sufficient)
+## Task 1 
+
+https://github.com/user-attachments/assets/8122e762-92a6-444f-9984-33eaf47ffc25
+
+https://github.com/user-attachments/assets/b410ca4a-debd-4ee3-b8c2-8ac155e65f65
+
+https://github.com/user-attachments/assets/93a58c1d-d18b-4ac4-a7f6-9441d97c195a
+
+## Task 2 
+
+https://github.com/user-attachments/assets/190b3b5b-6ec4-46fb-a464-e843aaaafc69
+
+https://github.com/user-attachments/assets/3e70fe97-7931-4c2a-84dd-fb1fe9150877
+
+https://github.com/user-attachments/assets/7787900c-d074-4329-9d10-41890a437d51
+
+## Task 3 
+
+https://github.com/user-attachments/assets/daefcb18-1972-47d0-9995-b4df0ebf3fcb
+
+https://github.com/user-attachments/assets/cf85b2ab-eb10-4b73-bf0d-3263d965545a
+
+https://github.com/user-attachments/assets/fcd69d10-09e8-4fdb-ab27-33dbe4dba1a4
+
+
+[comment]: <> (ffmpeg -f lavfi -i color=c=black:s=100x100:d=10 -i input.wav -shortest -c:v libx264 -c:a aac output.mp4)
 
 [comment]: <> (https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
